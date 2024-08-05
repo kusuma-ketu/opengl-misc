@@ -6,10 +6,10 @@
    The blending factors for the two icosahedrons vary sinusoidally
    and slightly out of phase.  blender also renders two lines of
    text in a stroke font: one line antialiased, the other not.  */
-
 #include <glut.h>
 #include <stdio.h>
 #include <math.h>
+#include <glfw3.h>
 
 GLfloat light0_ambient[] =
 {0.2, 0.2, 0.2, 1.0};

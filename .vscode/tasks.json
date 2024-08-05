@@ -10,6 +10,9 @@
 				"-g",
 				"${file}",
 				"-o",
+				"-lglew",
+				"-lglut",
+				"-lglfw",
 				"${fileDirname}/${fileBasenameNoExtension}"
 			],
 			"options": {
