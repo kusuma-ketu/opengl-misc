@@ -3,13 +3,12 @@
         {
             "name": "Mac",
             "includePath": [
-                "/opt/homebrew/Cellar/glew/2.2.0_1/include",
-                "/opt/homebrew/Cellar/glfw/3.4/include",
-                "/opt/homebrew/Cellar/freeglut/3.6.0/include/GL"
+                "${default}"
             ],
+           
             "defines": [],
             "macFrameworkPath": [],
-            "compilerPath": "/opt/homebrew/Cellar/llvm/18.1.8/bin/clang-18",
+            "compilerPath": "/opt/homebrew/Cellar/llvm/20.1.7/bin/clang-20",
             "cStandard": "gnu17",
             "cppStandard": "gnu++17",
             "intelliSenseMode": "macos-gcc-arm64"
