@@ -17,7 +17,7 @@
 
                 // Library paths
                 "-L/opt/homebrew/Cellar/glfw/3.4/lib",
-                "L/opt/homebrew/Cellar/glew/2.2.0_1/lib",
+                "-L/opt/homebrew/Cellar/glew/2.2.0_1/lib",
 
                 // Link against libraries
                 "-lglew",
@@ -48,4 +48,14 @@ opt/homebrew/opt/llvm/bin/clang++ main.cpp -std=c++20 -arch arm64 -g \
 -lglfw -lGLEW \
 -framework OpenGL -framework Cocoa -framework IOKit -framework CoreVideo \
 -o main
+
+/opt/homebrew/opt/llvm/bin/clang++ \
+  -std=c++20 -arch arm64 -g \
+  main.cpp \
+  -I/opt/homebrew/include \
+  -L/opt/homebrew/lib \
+  -lGLEW -lglfw \
+  -framework OpenGL -framework Cocoa -framework IOKit -framework CoreVideo \
+  -o main \
+  -stdlib=libc++
 */
