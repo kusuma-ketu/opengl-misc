@@ -2,11 +2,21 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 
+float bgColor[3] = {0.2f, 0.3f, 0.3f};
+
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
+    if (key == GLFW_KEY_SPACE && action == GLFW_PRESS) {
+        bgColor[0] = 1.0f;  // Red
+        bgColor[1] = 0.0f;
+        bgColor[2] = 0.0f;
+        }
+    }
+
 int main() {
     // Initialize GLFW
     if (!glfwInit()) {
         std::cerr << "Failed to initialize GLFW\n";
-        return -1;
+        return -1;`
     }
 
     // Set OpenGL version (3.3 Core)
@@ -36,15 +46,21 @@ int main() {
 
     // Viewport setup
     glViewport(0, 0, 800, 600);
+        
+    glfwSetKeyCallback(window, key_callback);
 
-    // Main loop
+    // Main loop`
     while (!glfwWindowShouldClose(window)) {
         // Input
-        if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+        if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS){
             glfwSetWindowShouldClose(window, true);
+        }
 
         // Render
         glClearColor(0.2f, 0.3f, 0.4f, 1.0f); // background color
+        glClear(GL_COLOR_BUFFER_BIT);
+
+        glClearColor(bgColor[0], bgColor[1], bgColor[2], 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
         // Swap buffers and poll IO events
@@ -56,4 +72,4 @@ int main() {
     glfwDestroyWindow(window);
     glfwTerminate();
     return 0;
-}
+}        
